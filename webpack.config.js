@@ -21,8 +21,21 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.png|\.jpg/,
+        use: [
+          {
+            loader: "file-loader", // 変更
+            options: {
+              esModule: false,
+              name: "images/[name].[ext]",
+            },
+          },
+        ],
+      },
     ],
   },
+
   plugins: [
     new MiniCssExtractPlugin({
       filename: "./stylesheets/main.css",
