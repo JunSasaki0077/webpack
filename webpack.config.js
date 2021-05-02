@@ -11,13 +11,24 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css/,
+        test: /\.css|\.sass|\.scss/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: "css-loader",
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [require("autoprefixer")({ grid: true })],
+              },
+            },
+          },
+          {
+            loader: "sass-loader",
           },
         ],
       },
@@ -65,6 +76,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/templates/access.pug",
       filename: "access.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/templates/members/taro.pug",
+      filename: "members/taro.html",
     }),
     new CleanWebpackPlugin(),
   ],

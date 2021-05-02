@@ -1,0 +1,9 @@
+@import "./footer.scss";
+
+@mixin set-margin($direction, $value) {
+  margin#{$direction}: $value;
+}
+
+body {
+  color: lightblue;
+}
