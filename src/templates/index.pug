@@ -1,0 +1,12 @@
+extends _layout.pug
+
+block locals
+  - let title = 'Hello Pug!';
+
+block content
+  h1 Hello World
+  img(src="../images/icon.png")
+  img(src="../images/thumbnail.jpg ")
+  ul
+    each val in [1,2,3,4,5]
+      li= val
