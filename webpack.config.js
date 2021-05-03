@@ -9,7 +9,7 @@ module.exports = {
   entry: "./src/javascripts/main.js",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "./javascripts/main.js",
+    filename: "./javascripts/[name]-[contenthash].js",
     publicPath: '/',
   },
   module: {
@@ -47,7 +47,7 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              sourceMap: false,
+              sourceMap: true,
             },
           },
           {
