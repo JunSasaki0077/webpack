@@ -15,15 +15,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts|\.tsx/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'ts-loader',
-          },
-        ],
-      },
-      {
         test: /\.js/,
         exclude: /node_modules/,
         use: [
@@ -70,13 +61,6 @@ module.exports = {
           filename: "images/[name][ext]",
         },
         use: [
-          // {
-          //   loader: "file-loader", // 変更
-          //   options: {
-          //     esModule: false,
-          //     name: "images/[name].[ext]",
-          //   },
-          // },
           {
             loader: "image-webpack-loader",
             options: {
